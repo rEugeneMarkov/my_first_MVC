@@ -12,3 +12,4 @@ $user = new \First\User($userdata['name'], $userdata['email'], $userdata['pass']
 //echo $user->getUserName();
 $user->hello();
 echo $user->getInfo();
+echo $user->name;

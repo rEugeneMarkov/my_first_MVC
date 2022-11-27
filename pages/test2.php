@@ -29,9 +29,4 @@ class User
     {
         echo "Добро пожаловать {$this->name}";
     }
-
-    public function hello1()
-    {
-        echo "Добро {$this->name}";
-    }
 }
