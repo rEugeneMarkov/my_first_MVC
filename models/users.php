@@ -1,9 +1,9 @@
 <?php
 
-namespace Test;
+namespace models;
 
 // модель
-class Model_Users
+class Users
 {
     public function getUser()
     {

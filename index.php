@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 include('config.php');
 
 // Соединяемся с БД
-$dbObject = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+$dbObject = new PDO('mysql:host=mysql:3306;dbname=php-first-mySQL', 'root', 'root');
 $dbObject->exec('SET CHARACTER SET utf8');
 
 // подключаем ядро сайта
@@ -14,7 +14,7 @@ include(SITE_PATH . DS . 'core' . DS . 'core.php');
 
 
 // Загружаем router
-$router = new router($registry);
+$router = new \classes\router($registry);
 // записываем данные в реестр
 $registry->set('router', $router);
 // задаем путь до папки контроллеров.

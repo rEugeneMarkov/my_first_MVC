@@ -1,5 +1,7 @@
 <?php
 
+namespace classes;
+
 // класс для подключения шаблонов и передачи данных в отображение
 class Template
 {
@@ -11,7 +13,9 @@ class Template
     public function __construct($layouts, $controllerName)
     {
         $this->layouts = $layouts;
-        $arr = explode('_', $controllerName);
+        //$this->controller = $controllerName;
+
+        $arr = explode('\\', $controllerName);
         $this->controller = strtolower($arr[1]);
     }
 
@@ -19,7 +23,8 @@ class Template
     public function vars($varname, $value)
     {
         if (isset($this->vars[$varname]) == true) {
-            trigger_error('Unable to set var `' . $varname . '`. Already set, and overwrite not allowed.', E_USER_NOTICE);
+            trigger_error('Unable to set var `' . $varname .
+                '`. Already set, and overwrite not allowed.', E_USER_NOTICE);
             return false;
         }
         $this->vars[$varname] = $value;

@@ -3,11 +3,13 @@
 // Загрузка классов "на лету"
 
 spl_autoload_register(function ($class_name) {
-    $a = explode('\\', $class_name);
-    $last = array_pop($a);
-    $filename = $last . '.php';
+    $a = str_replace('\\', '/', $class_name);
+    $file = SITE_PATH . $a . '.php';
+    //$a = explode('\\', $class_name);
+    //$last = array_pop($a);
+    //$filename = $last . '.php';
 
-    $expArr = explode('_', $last);
+    /*$expArr = explode('_', $last);
     if (empty($expArr[1]) or $expArr[1] == 'Base') {
         $folder = 'classes';
     } else {
@@ -24,11 +26,11 @@ spl_autoload_register(function ($class_name) {
                 $folder = 'classes';
                 break;
         }
-    }
+    }*/
 
-    $file = SITE_PATH . $folder . DS . $filename;
+    //$file = SITE_PATH . $folder . DS . $filename;
     require $file;
 });
 
 // запускаем реестр (хранилище)
-$registry = new \Test\Registry();
+$registry = new \classes\Registry();

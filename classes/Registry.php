@@ -1,6 +1,6 @@
 <?php
 
-namespace Test;
+namespace classes;
 
 // Класс хранилища
 

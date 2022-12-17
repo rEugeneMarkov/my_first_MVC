@@ -1,5 +1,7 @@
 <?php
 
+namespace classes;
+
 // класс роутера
 
 class Router
@@ -88,7 +90,7 @@ class Router
         include($file);
 
         // Создаём экземпляр контроллера
-        $class = 'Controller_' . $controller;
+        $class = $controller;
         $controller = new $class($this->registry);
 
         // Если экшен не существует - 404

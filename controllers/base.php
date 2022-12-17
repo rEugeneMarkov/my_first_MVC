@@ -1,9 +1,9 @@
 <?php
 
-//namespace Test; 
+namespace controllers;
 
 // абстрактый класс контроллера
-abstract class Controller_Base
+abstract class Base
 {
     protected $registry;
     protected $template;
@@ -16,7 +16,7 @@ abstract class Controller_Base
     {
         $this->registry = $registry;
         // шаблоны
-        $this->template = new Template($this->layouts, get_class($this));
+        $this->template = new \classes\Template($this->layouts, get_class($this));
     }
 
     abstract public function index();

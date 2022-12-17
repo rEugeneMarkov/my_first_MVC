@@ -1,9 +1,9 @@
 <?php
 
-//namespace Test;
+namespace controllers;
 
 // контролер
-class Controller_Index extends Controller_Base
+class Index extends base
 {
     // шаблон
     public $layouts = "first_layouts";
@@ -11,7 +11,7 @@ class Controller_Index extends Controller_Base
     // экшен
     public function index()
     {
-        $model = new \Test\Model_Users();
+        $model = new \models\Users();
         $userInfo = $model->getUser();
         $this->template->vars('userInfo', $userInfo);
         $this->template->view('index');
