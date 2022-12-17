@@ -1,16 +1,23 @@
 <?php
 
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+// включим отображение всех ошибок
+error_reporting(E_ALL);
+// подключаем конфиг
+include('config.php');
 
-if ($uri === '/') {
-    $file = 'index.php';
-} elseif ($uri === '/articles') {
-    $file = 'articles.php';
-} elseif ($uri === '/registration') {
-    $file = 'registration.php';
-} elseif ($uri === '/test') {
-    $file = 'test.php';
-} else {
-    $file = 'error404.php';
-}
-require $_SERVER['DOCUMENT_ROOT'] . '/pages/' . $file;
+// Соединяемся с БД
+$dbObject = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+$dbObject->exec('SET CHARACTER SET utf8');
+
+// подключаем ядро сайта
+include(SITE_PATH . DS . 'core' . DS . 'core.php');
+
+
+// Загружаем router
+$router = new router($registry);
+// записываем данные в реестр
+$registry->set('router', $router);
+// задаем путь до папки контроллеров.
+$router->setPath(SITE_PATH . DS . 'controllers');
+// запускаем маршрутизатор
+$router->start();

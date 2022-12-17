@@ -4,8 +4,8 @@ require $_SERVER['DOCUMENT_ROOT'] . "/templates/header.php";
 spl_autoload_register(function ($class_name) {
     $a = explode('\\', $class_name);
     $last = array_pop($a);
-    $fn = $last . '.php';
-    require $fn;
+    $filename = $last . '.php';
+    require $filename;
 });
 
 $email = $_SESSION['email'] ?? '';
