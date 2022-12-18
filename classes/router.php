@@ -90,7 +90,8 @@ class Router
         include($file);
 
         // Создаём экземпляр контроллера
-        $class = $controller;
+
+        $class = "\\controllers\\" . $controller;
         $controller = new $class($this->registry);
 
         // Если экшен не существует - 404

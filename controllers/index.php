@@ -3,7 +3,7 @@
 namespace controllers;
 
 // контролер
-class Index extends base
+class Index extends Base
 {
     // шаблон
     public $layouts = "first_layouts";
