@@ -3,7 +3,7 @@
 namespace controllers;
 
 // контролер
-class Articles extends Base
+class Registration extends Base
 {
     // шаблон
     public $layouts = "first_layouts";
@@ -11,9 +11,9 @@ class Articles extends Base
     // экшен
     public function index()
     {
-        $model = new \models\Articles();
+        $model = new \models\Registration();
         $articleInfo = $model->getArticle();
         $this->template->vars('articleInfo', $articleInfo);
-        $this->template->view('articles');
+        $this->template->view('registration');
     }
 }

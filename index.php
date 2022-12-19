@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 // включим отображение всех ошибок
 error_reporting(E_ALL);
 // подключаем конфиг

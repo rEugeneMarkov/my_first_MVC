@@ -31,8 +31,10 @@ class Router
     // определение контроллера и экшена из урла
     private function getController(&$file, &$controller, &$action, &$args)
     {
-        $route = (empty($_GET['route'])) ? '' : $_GET['route'];
-        unset($_GET['route']);
+        //$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        //$route = (empty($_GET['route'])) ? '' : $_GET['route'];
+        //unset($_GET['route']);
+        $route = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         if (empty($route)) {
             $route = 'index';
         }

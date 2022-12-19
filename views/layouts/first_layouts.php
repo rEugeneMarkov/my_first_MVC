@@ -1,5 +1,7 @@
-<h1> header </h1>
 <?php
+
+    require $_SERVER['DOCUMENT_ROOT'] . "/templates/header.php";
+
     include($contentPage);
-?>
-<h1> footer </h1>
+
+    require $_SERVER['DOCUMENT_ROOT'] . "/templates/footer.php";
