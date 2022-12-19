@@ -7,6 +7,3 @@ spl_autoload_register(function ($class_name) {
     $file = SITE_PATH . $a . '.php';
     require $file;
 });
-
-// запускаем реестр (хранилище)
-$registry = new \classes\Registry();

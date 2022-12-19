@@ -15,9 +15,7 @@ include(SITE_PATH . DS . 'core' . DS . 'core.php');
 
 
 // Загружаем router
-$router = new \classes\router($registry);
-// записываем данные в реестр
-$registry->set('router', $router);
+$router = new \classes\router();
 // задаем путь до папки контроллеров.
 $router->setPath(SITE_PATH . DS . 'controllers');
 // запускаем маршрутизатор

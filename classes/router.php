@@ -11,9 +11,8 @@ class Router
     private $args = array();
 
     // получаем хранилище
-    public function __construct($registry)
+    public function __construct()
     {
-        $this->registry = $registry;
     }
 
     // задаем путь до папки с контроллерами
