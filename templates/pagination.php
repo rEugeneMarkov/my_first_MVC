@@ -21,7 +21,9 @@ if (isset($_GET['page'])) {
     //echo $art;
 
     // Определяем все количество записей в таблице
-    $total = get_table_count($table);
+    //$total = get_table_count($table);
+    $total = $tableRowCount;
+
     // всего записей
     //echo $total;
 

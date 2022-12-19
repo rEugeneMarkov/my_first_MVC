@@ -12,8 +12,8 @@ class Registration extends Base
     public function index()
     {
         $model = new \models\Registration();
-        $articleInfo = $model->getArticle();
-        $this->template->vars('articleInfo', $articleInfo);
+        $registrationInfo = $model->getRegistration();
+        $this->template->vars('registrationInfo', $registrationInfo);
         $this->template->view('registration');
     }
 }

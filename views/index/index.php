@@ -1,3 +1,4 @@
-Test view <br/>
-id: <?=$userInfo['id'];?><br/>
-name: <?=$userInfo['name'];?>
+<h1>Гостевая книга</h1>
+
+id: <?=$indexInfo['id'];?><br/>
+name: <?=$indexInfo['name'];?>

@@ -11,9 +11,9 @@ class Index extends Base
     // экшен
     public function index()
     {
-        $model = new \models\Users();
-        $userInfo = $model->getUser();
-        $this->template->vars('userInfo', $userInfo);
+        $model = new \models\Index();
+        $indexInfo = $model->getIndex();
+        $this->template->vars('indexInfo', $indexInfo);
         $this->template->view('index');
     }
 }

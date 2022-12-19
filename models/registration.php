@@ -5,8 +5,8 @@ namespace models;
 // модель
 class Registration
 {
-    public function getArticle()
+    public function getRegistration()
     {
-        return array('id' => 2, 'name' => 'test_name2');
+        return array('id' => 2, 'name' => 'test_registration');
     }
 }

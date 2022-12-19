@@ -16,7 +16,7 @@ abstract class Base
 
         // имя таблицы
         $modelName = get_class($this);
-        $arrExp = explode('_', $modelName);
+        $arrExp = explode('\\', $modelName);
         $tableName = strtolower($arrExp[1]);
         $this->table = $tableName;
 
