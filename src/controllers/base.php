@@ -5,16 +5,14 @@ namespace controllers;
 // абстрактый класс контроллера
 abstract class Base
 {
-    protected $registry;
     protected $template;
     protected $layouts; // шаблон
 
     public $vars = array();
 
     // в конструкторе подключаем шаблоны
-    public function __construct($registry)
+    public function __construct()
     {
-        $this->registry = $registry;
         // шаблоны
         $this->template = new \classes\Template($this->layouts, get_class($this));
     }
