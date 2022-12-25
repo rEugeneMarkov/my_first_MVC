@@ -6,7 +6,6 @@ namespace classes;
 
 class Router
 {
-    private $registry;
     private $path;
     private $args = array();
 
@@ -93,7 +92,7 @@ class Router
         // Создаём экземпляр контроллера
 
         $class = "\\controllers\\" . $controller;
-        $controller = new $class($this->registry);
+        $controller = new $class();
 
         // Если экшен не существует - 404
         if (is_callable(array($controller, $action)) == false) {

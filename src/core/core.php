@@ -2,8 +2,8 @@
 
 // Загрузка классов "на лету"
 
-spl_autoload_register(function ($class_name) {
+spl_autoload_register(function (string $class_name) {
     $a = str_replace('\\', '/', $class_name);
     $file = SITE_PATH . $a . '.php';
-    require $file;
+    require_once $file;
 });
