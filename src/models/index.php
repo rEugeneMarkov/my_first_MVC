@@ -3,14 +3,16 @@
 namespace models;
 
 // модель
-class Index
+class Index extends Base
 {
-    protected $db;
-    protected $table;
-    private $dataResult;
-
     public function getIndex()
     {
-        return array('id' => 1, 'name' => 'test_index');
+        $sql = 'SELECT * FROM `index`;';
+        $result = $this->query($sql);
+        //$this->dataResult = $result;
+        $id = 1;
+        $test = 'test_index';
+        return array('id' => $id,
+                    'name' => $test);
     }
 }
