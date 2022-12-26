@@ -2,12 +2,9 @@
 
 namespace controllers;
 
-use classes\Db;
-
 // абстрактый класс контроллера
 abstract class Base
 {
-    private $db;
     protected $template;
     protected $layouts; // шаблон
 
@@ -18,7 +15,6 @@ abstract class Base
     {
         // шаблоны
         $this->template = new \classes\Template($this->layouts, get_class($this));
-        $this->db = new \classes\Db();
     }
 
     abstract public function index();
